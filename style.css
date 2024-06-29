@@ -1,0 +1,55 @@
+
+@font-face{
+    font-family: "bigShoulderOne";
+    src: url("/assets/fonts/bigShoulderOne.ttf");
+}
+
+@font-face{
+    font-family: "bigShoulderTwo";
+    src: url("/assets/fonts/bigShoulderTwo.ttf");
+}
+
+@font-face{
+    font-family: "coveredByYourGrace";
+    src: url("/assets/fonts/coveredByYourGrace.ttf");
+}
+
+
+body{
+    background: rgb(127,130,116);
+}
+
+#gameContainer{
+    text-align: center;
+}
+
+#gameBoard{
+    margin-top: 10px;
+    border: 3px solid;
+    border-radius: 5px;
+    border-color:rgb(0, 0, 0);
+}
+#scoreText{
+    font-family: "coveredByYourGrace",cursive;
+    font-size: 50px;
+}
+
+#resetBtn{
+    font-family: bigShoulderOne;
+    font-size: 25px;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    border: 2px solid;
+    border-radius: 15px;
+}
+
+#playGuide, #detail{
+    margin: 5px;
+    text-align: center;
+    font-size: 50px;
+    font-family: coveredByYourGrace;
+}
+
+
+
