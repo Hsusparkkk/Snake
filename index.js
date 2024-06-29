@@ -124,9 +124,6 @@ function changeDirection(event){
             yVelocity = unitSize;
             break; 
         }
-
-
-
 };
 function checkGameOver(){
     switch(true){

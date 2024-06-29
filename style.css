@@ -1,17 +1,17 @@
 
 @font-face{
     font-family: "bigShoulderOne";
-    src: url("/assets/fonts/bigShoulderOne.ttf");
+    src: url("assets/fonts/bigShoulderOne.ttf");
 }
 
 @font-face{
     font-family: "bigShoulderTwo";
-    src: url("/assets/fonts/bigShoulderTwo.ttf");
+    src: url("assets/fonts/bigShoulderTwo.ttf");
 }
 
 @font-face{
     font-family: "coveredByYourGrace";
-    src: url("/assets/fonts/coveredByYourGrace.ttf");
+    src: url("assets/fonts/coveredByYourGrace.ttf");
 }
 
 
