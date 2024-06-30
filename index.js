@@ -209,7 +209,7 @@ function checkMobile(){
     }
 }
 function showMbCtr(){
-    if(checkMobile()){
+    if(!checkMobile()){
         upBtn.style.visibility = "hidden";
         leftBtn.style.visibility = "hidden";
         rightBtn.style.visibility = "hidden";
