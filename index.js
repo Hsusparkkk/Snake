@@ -12,7 +12,7 @@ const boardBackground = "white";
 const snakeColor = "lightgreen";
 const snakeBorder = "black";
 const foodColor = "red";
-const unitSize = 25;
+let unitSize = 25;
 let tickTime = 10;
 let running = false;
 let xVelocity = unitSize;
@@ -199,11 +199,13 @@ function resetGame(){
 function checkMobile(){
     try{
         document.createEvent("TouchEvent");
-        tickTime = 5;
+        tickTime = 10;
+        unitSize = 15;
         console.log("mobile");
         return true;
     } catch(e){
         tickTime = 10;
+        unitSize = 25;
         console.log("pc");
         return false;
     }
