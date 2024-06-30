@@ -29,31 +29,30 @@ let snake = [
 
 window.addEventListener("keydown",changeDirection);
 resetBtn.addEventListener("click",resetGame);
-upBtn.addEventListener("click",e => {
+upBtn.addEventListener("click",() => {
     if(!(yVelocity == unitSize)){
         xVelocity = 0;
         yVelocity = -unitSize;
     }
 })
-downBtn.addEventListener("click",e => {
+downBtn.addEventListener("click",() => {
     if(!(yVelocity == -unitSize)){
         xVelocity = 0;
         yVelocity = unitSize;
     }
 })
-leftBtn.addEventListener("click",e => {
+leftBtn.addEventListener("click",() => {
     if(!(xVelocity == unitSize)){
         xVelocity = -unitSize;
         yVelocity = 0;
     }
 })
-rightBtn.addEventListener("click",e => {
+rightBtn.addEventListener("click",() => {
     if(!(xVelocity == -unitSize)){
         xVelocity = unitSize;
         yVelocity = 0;
     }
 })
-
 
 // checkMobile();
 showMbCtr();
@@ -201,23 +200,28 @@ function checkMobile(){
     try{
         document.createEvent("TouchEvent");
         tickTime = 5;
+        console.log("mobile");
         return true;
     } catch(e){
         tickTime = 10;
+        console.log("pc");
         return false;
     }
 }
 function showMbCtr(){
-    if(checkMobile){
+    if(!checkMobile()){
         upBtn.style.visibility = "hidden";
         leftBtn.style.visibility = "hidden";
         rightBtn.style.visibility = "hidden";
         downBtn.style.visibility = "hidden";
+        // console.log()
+        console.log("pc-2")
     }else{
         upBtn.style.visibility = "visible";
         leftBtn.style.visibility = "visible";
         rightBtn.style.visibility = "visible";
         downBtn.style.visibility = "visible";
+        console.log("mobile-2")
     }
 }
 
