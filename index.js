@@ -4,12 +4,16 @@ const scoreText = document.querySelector("#scoreText");
 const resetBtn = document.querySelector("#resetBtn");
 const gameWidth = gameBoard.width;
 const gameHeight = gameBoard.height;
+const upBtn = document.querySelector("#upBtn");
+const downBtn = document.querySelector("#downBtn");
+const leftBtn = document.querySelector("#leftBtn");
+const rightBtn = document.querySelector("#rightBtn");
 const boardBackground = "white";
 const snakeColor = "lightgreen";
 const snakeBorder = "black";
 const foodColor = "red";
 const unitSize = 25;
-const tickTime = 10;
+let tickTime = 10;
 let running = false;
 let xVelocity = unitSize;
 let yVelocity = 0;
@@ -19,12 +23,40 @@ let score = 0;
 let snake = [
     {x:0, y:0}
 ];
+
 // Each object is a body part of the snake, 
 // they each have their own x and y coordinates.
 
 window.addEventListener("keydown",changeDirection);
 resetBtn.addEventListener("click",resetGame);
+upBtn.addEventListener("click",e => {
+    if(!(yVelocity == unitSize)){
+        xVelocity = 0;
+        yVelocity = -unitSize;
+    }
+})
+downBtn.addEventListener("click",e => {
+    if(!(yVelocity == -unitSize)){
+        xVelocity = 0;
+        yVelocity = unitSize;
+    }
+})
+leftBtn.addEventListener("click",e => {
+    if(!(xVelocity == unitSize)){
+        xVelocity = -unitSize;
+        yVelocity = 0;
+    }
+})
+rightBtn.addEventListener("click",e => {
+    if(!(xVelocity == -unitSize)){
+        xVelocity = unitSize;
+        yVelocity = 0;
+    }
+})
 
+
+// checkMobile();
+showMbCtr();
 gameStart();
 creatFood();
 drawFood();
@@ -165,6 +197,28 @@ function resetGame(){
     gameStart();
 
 };
-
+function checkMobile(){
+    try{
+        document.createEvent("TouchEvent");
+        tickTime = 5;
+        return true;
+    } catch(e){
+        tickTime = 10;
+        return false;
+    }
+}
+function showMbCtr(){
+    if(checkMobile){
+        upBtn.style.visibility = "hidden";
+        leftBtn.style.visibility = "hidden";
+        rightBtn.style.visibility = "hidden";
+        downBtn.style.visibility = "hidden";
+    }else{
+        upBtn.style.visibility = "visible";
+        leftBtn.style.visibility = "visible";
+        rightBtn.style.visibility = "visible";
+        downBtn.style.visibility = "visible";
+    }
+}
 
 
